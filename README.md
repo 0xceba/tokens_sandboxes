@@ -69,5 +69,5 @@ page.asn:AS19679 AND filename:.pdf
 
 The above queries are a sample of how an attacker could maliciously use these services. The takeaways from this work are that:
 * URLs with session token can be just as important as passwords and should be handled accordingly.
-* consider mounting local infrastructure instead of using the easy online, third-party solutions that we've become dependent on.
+* consider mounting local infrastructure instead of using the easy third-party solutions that we've become dependent on.
 	* if this is asking too much, at the very least mark the "Private" scan option when submitting samples.
