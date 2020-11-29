@@ -1,4 +1,4 @@
-# Users Submitting Session Tokens to Sandboxes
+# Submission of Session Tokens to Sandboxes
 
 Online URL sandbox services, such as [https://app.any.run](https://app.any.run) and [https://urlscan.io](https://urlscan.io), are services that will navigate to a website on behalf of a user without the user interacting with it. The service will capture some technical details about the target website and a screen capture. These services save and publicly display the scan results. There are saved submissions of internal phishing tests which indicate that users at major corporations such as Expedia, Charles Schwab, and Westinghouse have used these services to assess suspicious hyperlinks they received via email:
 
