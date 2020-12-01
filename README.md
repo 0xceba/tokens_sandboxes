@@ -2,11 +2,11 @@
 
 ## What's happening?
 
-Users are submitting URLs with session tokens to online sandbox services which publicly display the sandbox submission history. The submission histories of the two biggest online sandbox services can be accessed at [https://app.any.run/submissions](https://app.any.run/submissions) and [https://urlscan.io/search/](https://urlscan.io/search/). Attackers could use the session tokens submitted to these services to get no-effort access to authenticated services.
+Users are submitting URLs with session tokens to online sandbox services which publicly display the sandbox submission history. The submission histories of the two biggest online sandbox services can be accessed at <a href="https://app.any.run/submissions" target="_blank">https://app.any.run/submissions</a> and <a href="https://urlscan.io/search/" target="_blank">https://urlscan.io/search/</a>. Attackers could use the session tokens submitted to these services to get no-effort access to authenticated services.
 
-## Who are the victims?
+## Who are the potential victims?
 
-There are submissions of internal phishing from major corporations such as Expedia, Charles Schwab, and Westinghouse. These submissions indicate that their employees likely use these sandboxes to assess hyperlinks that they've received via email.
+There are submissions of internal phishing from major corporations such as Expedia, Charles Schwab, and Westinghouse. These submissions indicate that their employees likely use these sandboxes to assess hyperlinks that they've received via email. Employees of many other corporations probably do the same thing as the threat of phishing is (rightfully) reiterated frequently in most companies' infosec trainings.
 
 ![Expedia internal phishing](/images/expedia_phishing.jpg)
 
@@ -16,7 +16,7 @@ There are submissions of internal phishing from major corporations such as Exped
 
 ## How could attackers take advantage of this?
 
-The submission history of both any.run and urlscan.io contains countless submissions with session tokens, however, urlscan.io allows users to search through the history so it's easier to find session tokens on this service. Some sample urlscan.io queries that will fetch password reset or invitation session tokens follow:
+The submission history of both any.run and urlscan.io contains countless submissions with session tokens, however, urlscan.io allows users to search through the history so it's easier to find session tokens on this service. Some sample urlscan.io queries that will return results with password reset or invitation URLs follow:
 ```
 page.url:reset AND page.url:password
 page.url:register
@@ -26,7 +26,7 @@ page.url:invitation
 page.url:welcome
 ```
 
-These queries turn up some fun results such as an invitation to create an Amazon Business account for a University of Southern California employee:
+Some of the fun results such of the above queries are an invitation to create an Amazon Business account for a University of Southern California employee:
 ![Amazon Business USC](/images/amazon_business_usc.jpg)
 
 and an invitation to join Teledyne Technologies’ Atlassian domain:
@@ -47,7 +47,7 @@ Many corporations use portal-based email services to ensure confidentiality betw
 page.url:securemail
 ```
 
-Among the results is an invitation URL for an employee of Ross Stores to communicate with Alliance Data:
+Among the results is an invitation URL for an employee of Ross Stores to communicate with someone from AllianceData:
 ![Alliance Data Ross Stores](/images/alliance_data_ross.jpg)
 
 Zix is a major provider of these secure email portals so if we search for submissions hosted by Zix’s ASN and a parameter that indicates that they are invitation links:
@@ -56,7 +56,7 @@ page.asn:AS13380 AND page.url:"&c="
 page.asn:AS48077 AND page.url:"&c="
 ```
 
-The above queries return thousands of publicly-indexed secure email invitation links, many of which are still active like the following to a NASA employee from the Bureau of the Fiscal Service:
+The above queries return thousands of secure email invitation links, many of which are still active like the following to a NASA employee from the Bureau of the Fiscal Service:
 ![Zix Invite Fiscal Service](/images/fiscal_service_nasa.jpg)
 
 Dropbox invitation URLs have also been submitted and can be collected with the following query:
@@ -73,6 +73,6 @@ page.asn:AS19679 AND filename:.pdf
 
 ## Takeaways
 
-* URLs with session token can be just as important as passwords and should be handled accordingly.
+* URLs with session tokens can be just as important as passwords and should be handled accordingly.
 * Consider mounting local infrastructure instead of using the easy, third-party solutions that we're all too dependent on.
 	* If this is asking too much, at the very least mark the "Private" scan option when submitting samples !
