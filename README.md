@@ -71,7 +71,7 @@ page.asn:AS19679 AND filename:.pdf
 ```
 ![Dropbox Sworn Statement](/images/dropbox_sworn_statement.jpg)
 
-## Takeaways
+## What can be done?
 
 * URLs with session tokens can be just as important as passwords and should be handled accordingly.
 * Consider mounting local infrastructure instead of using the easy, third-party solutions that we're all too dependent on.
