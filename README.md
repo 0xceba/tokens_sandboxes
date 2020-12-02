@@ -26,7 +26,7 @@ page.url:invitation
 page.url:welcome
 ```
 
-Some of the fun results such of the above queries are an invitation to create an Amazon Business account for a University of Southern California employee:
+Some of the results from the above queries are an invitation to create an Amazon Business account for a University of Southern California employee:
 ![Amazon Business USC](/images/amazon_business_usc.jpg)
 
 and an invitation to join Teledyne Technologies’ Atlassian domain:
